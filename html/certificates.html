@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sertifikat</title>
+  <link rel="stylesheet" href="../css/certificates.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+  <!-- HEADER -->
+  <header class="certificates-header">
+    <h1>===Sertifikat Saya===</h1>
+  </header>
+
+  <!-- SECTION -->
+  <section class="certificates">
+
+    <div class="cert-grid">
+
+      <!-- CARD 1 -->
+      <div class="cert-card" onclick="openModal('../img/sertifikasi-Bootcamp.png')">
+        <img src="../img/sertifikasi-Bootcamp.png" alt="Sertifikat">
+        <div class="cert-info">
+          <h3>UI/UX Design</h3>
+          <p></p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="cert-card" onclick="openModal('../img/sertifikat-UPA.png')">
+        <img src="../img/sertifikat-UPA.png" alt="Sertifikat">
+        <div class="cert-info">
+          <h3>English Proficiency Test</h3>
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MODAL PREVIEW -->
+  <div id="certModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function openModal(src) {
+      document.getElementById("certModal").style.display = "block";
+      document.getElementById("modalImg").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("certModal").style.display = "none";
+    }
+
+    // close klik luar gambar
+    window.onclick = function(event) {
+      const modal = document.getElementById("certModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+<!-- JS INCLUDE NAVBAR -->
+<script src="../js/include.js"></script>
+
+</body>
+</html>

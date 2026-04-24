@@ -1,0 +1,145 @@
+/* RESET */
+body {
+  margin: 0;
+  padding: 0;
+  background: #020617;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* GRID GLOBAL */
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+/* CARD GLOBAL */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* TEXT FIX (PENTING BANGET) */
+h1, h2, h3, p {
+  color: white;
+}
+
+/* ========================= */
+/* 🌌 SIDE NAV PLANET STYLE */
+/* ========================= */
+
+.side-nav {
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+/* ITEM */
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  text-decoration: none;
+}
+
+/* PLANET */
+.planet {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+/* WARNA PLANET */
+.planet-home {
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.planet-about {
+  background: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.planet-certificates {
+  background: #6005b5;
+  box-shadow: 0 0 10px #6005b5;
+}
+
+.planet-project {
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+.planet-contact {
+  background: #f97316;
+  box-shadow: 0 0 10px #f97316;
+}
+
+/* TEXT */
+.nav-item span {
+  color: #ccc;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: 0.3s;
+}
+
+/* HOVER */
+.nav-item:hover .planet {
+  transform: scale(1.8);
+}
+
+.nav-item:hover span {
+  opacity: 1;
+  transform: translateX(0);
+  color: white;
+}
+
+/* ACTIVE */
+.nav-item.active .planet {
+  transform: scale(1.8);
+}
+
+.nav-item.active span {
+  opacity: 1;
+  color: white;
+}
+
+.planet::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 8px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  top: 4px;
+  left: -5px;
+  transform: rotate(20deg);
+}
