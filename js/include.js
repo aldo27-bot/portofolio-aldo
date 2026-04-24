@@ -1,7 +1,7 @@
 // =====================
 // NAVBAR INCLUDE
 // =====================
-fetch("../component/navbar.html")
+fetch("/component/navbar.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
@@ -11,7 +11,7 @@ fetch("../component/navbar.html")
     const current = window.location.pathname.split("/").pop();
 
     links.forEach(link => {
-      if (link.getAttribute("href") === current) {
+      if (link.getAttribute("href").includes(current)) {
         link.classList.add("active");
       }
     });
@@ -59,16 +59,17 @@ window.addEventListener("scroll", function () {
 // =====================
 // PAGE TRANSITION
 // =====================
-document.querySelectorAll("a").forEach(link => {
-  if (link.href && link.href.includes(".html")) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
+document.querySelectorAll("a[href$='.html']").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
 
-      document.body.classList.add("fade-out");
+        document.body.classList.add("fade-out");
 
-      setTimeout(() => {
-        window.location = this.href;
-      }, 300);
+        const target = this.getAttribute("href");
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 300);
+        console.log("klik:", target);
+      });
     });
-  }
-});
